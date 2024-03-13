@@ -1,7 +1,7 @@
 <div class="container">
     {% if user.is_authenticated %}
         <h1>Hello, {{ user.username }}</h1>
-        <form method="post" action="{% url 'logout' %}">
+        <form method="post" action="{% url 'users:logout' %}">
             {% csrf_token %}
             <button type="submit">logout</button>
         </form>

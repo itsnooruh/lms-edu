@@ -14,4 +14,4 @@ class User(auth.AbstractUser):
     REQUIRED_FIELDS = ["phone_number"]
 
     def __str__(self):
-        return f"({self.role}) {self.first_name} {self.last_name}"
+        return f"[{self.get_role_display()}] {self.username}"
