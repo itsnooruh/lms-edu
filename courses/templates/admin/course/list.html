@@ -1,0 +1,12 @@
+<a href="{% url 'administrator:dashboard' %}">Go to dashboard</a>
+<a href="{% url 'administrator:create_course' %}">Create Course</a>
+<a href="{% url 'administrator:create_lesson' %}">Create Lesson</a>
+
+<h1>Courses</h1>
+
+<ul>
+    {% for course in courses %}
+        <li>{{ course.title }} | <a href="{% url 'administrator:update_course' pk=course.id %}">Edit</a> | <a
+                href="{% url 'administrator:delete_course' pk=course.id %}">Delete</a></li>
+    {% endfor %}
+</ul>

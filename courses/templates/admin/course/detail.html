@@ -1,0 +1,11 @@
+<h1>Course name: {{ course.title }}</h1>
+<p><strong>Description:</strong> <a href="">{{ course.description }}</a></p>
+<p><strong>Start date:</strong> {{ course.start_date }}</p>
+<p><strong>End date:</strong> {{ course.end_date }}</p>
+<p><strong>Duration:</strong> {{ course.duration }}</p>
+<p><strong>Slug:</strong> {{ course.slug }}</p>
+<ul>
+    {% for lesson in course.lessons %}
+        <li><a href="{% url 'administrator:delete_lesson' pk=lesson.id %}"></a></li>
+    {% endfor %}
+</ul>

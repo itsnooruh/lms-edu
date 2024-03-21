@@ -2,5 +2,10 @@
 
 {% if user.is_authenticated %}
     <p>Hello, {{ user.get_username }}</p>
+    <form method="post" action="{% url 'users:logout' %}">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
 {% endif %}
 
+<a href="{% url 'administrator:list_users' %}">Users</a>
